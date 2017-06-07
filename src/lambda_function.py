@@ -4,12 +4,12 @@ import json
 import logging
 import urllib.request
 import os
-
+from typing import Dict, Optional
 
 MSW_API = os.environ.get('SF_MSW_API', None)
 
 
-def close(fulfillment_state, message):
+def close(fulfillment_state: str, message: Dict[str, str]) -> dict:
     """Close dialog generator"""
     return {
         'dialogAction': {
@@ -20,7 +20,7 @@ def close(fulfillment_state, message):
     }
 
 
-def lambda_handler(event, _):
+def lambda_handler(event: dict, _: dict) -> Optional[dict]:
     """Lambda Handler
        Entry point for every lambda function call
     """
@@ -32,7 +32,7 @@ def lambda_handler(event, _):
 
     if not MSW_API:
         logger.error("Couldn't read SF_MSW_API env variable")
-        return
+        return None
 
     res = json.loads(urllib.request.urlopen(
         "http://magicseaweed.com/api/{}/forecast/?spot_id=912".format(
