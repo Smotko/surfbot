@@ -1,2 +1,3 @@
 /venv
 upload.zip
+.mypy_cache

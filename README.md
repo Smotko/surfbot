@@ -9,7 +9,13 @@ You will need to obtain a MSW API key ([more info](http://magicseaweed.com/devel
 ```
 $ virtualenv -p python3 venv
 $ . venv/bin/activate
-$ pip install awscli
+$ pip install awscli flake8 pylint mypy
+```
+
+## Run lint
+
+```
+$ ./lint.sh
 ```
 
 ## Deploying
