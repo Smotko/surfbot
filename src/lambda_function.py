@@ -3,10 +3,9 @@
 import json
 import logging
 import urllib.request
-import os
 from typing import Dict, Optional
 
-MSW_API = os.environ.get('SF_MSW_API', None)
+import settings
 
 
 def close(fulfillment_state: str, message: Dict[str, str]) -> dict:
@@ -25,18 +24,18 @@ def lambda_handler(event: dict, _: dict) -> Optional[dict]:
        Entry point for every lambda function call
     """
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG)
+    logger.setLevel(settings.LOG_LEVEL)
     logger.debug('event.bot.name=%s', event['bot']['name'])
     logger.debug('dispatch userId=%s, intentName=%s', event['userId'],
                  event['currentIntent']['name'])
 
-    if not MSW_API:
+    if not settings.MSW_API:
         logger.error("Couldn't read SF_MSW_API env variable")
         return None
 
     res = json.loads(urllib.request.urlopen(
         "http://magicseaweed.com/api/{}/forecast/?spot_id=912".format(
-            MSW_API)).read())
+            settings.MSW_API)).read())
     logger.debug('json.response=%s', res)
 
     return close('Fulfilled',
