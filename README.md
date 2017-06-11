@@ -1,4 +1,4 @@
-# Surf Bot
+# Surf Bot [![CircleCI](https://circleci.com/gh/Smotko/surfbot.svg?style=svg)](https://circleci.com/gh/Smotko/surfbot)
 
 A simple surf bot for retrieving the surf forecast.
 
