@@ -5,22 +5,23 @@ log_error () {
     echo "  ✅  $2";
   else
     echo "  ❌  $2 failed with:"
-    cat /tmp/Error
+    cat /tmp/error
     if [ "$2" = "flake8" ]; then
       echo; fi; fi
   return $1
 }
 
 . venv/bin/activate
+PATH=$PATH:venv/bin/
 
 EXIT_FLAKE8=0
 EXIT_PYLINT=0
 EXIT_MYPY=0
-venv/bin/flake8 src 1> /tmp/error || EXIT_FLAKE8=$?
+flake8 src 1> /tmp/error || EXIT_FLAKE8=$?
 log_error $EXIT_FLAKE8 "flake8"
-venv/bin/pylint src 1> /tmp/error || EXIT_PYLINT=$?
+pylint src 1> /tmp/error || EXIT_PYLINT=$?
 log_error $EXIT_PYLINT "pylint"
-venv/bin/mypy src 1> /tmp/error || EXIT_MYPY=$?
+mypy src 1> /tmp/error || EXIT_MYPY=$?
 log_error $EXIT_MYPY "mypy"
 
 EXIT=$(($EXIT_FLAKE8 + $EXIT_PYLINT + $EXIT_MYPY))
