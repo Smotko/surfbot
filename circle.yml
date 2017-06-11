@@ -1,0 +1,10 @@
+machine:
+  python:
+    version: 3.6.1
+
+dependencies:
+  override:
+    - pip install flake8 pylint mypy
+test:
+  override:
+    - ./lint.sh
