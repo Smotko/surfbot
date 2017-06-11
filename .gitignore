@@ -1,3 +1,8 @@
 /venv
 upload.zip
 .mypy_cache
+.eggs
+*egg-info
+.cache
+cov.xml
+.coverage

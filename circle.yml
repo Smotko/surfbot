@@ -4,7 +4,10 @@ machine:
 
 dependencies:
   override:
-    - pip install flake8 pylint mypy
+    - pip install flake8 pylint mypy pytest pytest-cov
 test:
   override:
     - ./lint.sh
+    - python setup.py test
+  post:
+    - bash <(curl -s https://codecov.io/bash) -X gcov -X coveragepy -f cov.xml -t $CODECOV_TOKEN
