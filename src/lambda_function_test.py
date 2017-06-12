@@ -42,4 +42,4 @@ def test_lambda_handler(monkeypatch) -> None:
         }
     }, {})
     assert res is not None
-    assert res['dialogAction']['message']['content'] == "This worked! 1"
+    assert res['dialogAction']['message']['content'] == "Number of stars: 1"

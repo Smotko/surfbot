@@ -38,4 +38,5 @@ def lambda_handler(event: dict, _: dict) -> Optional[dict]:
 
     return close('Fulfilled',
                  {'contentType': 'PlainText',
-                  'content': 'This worked! {}'.format(res[0]['solidRating'])})
+                  'content': 'Number of stars: {}'.format(
+                      res[0]['solidRating'])})
