@@ -2,6 +2,7 @@
 
 from unittest.mock import MagicMock
 from unittest.mock import Mock
+from _pytest.monkeypatch import MonkeyPatch
 import lambda_function
 
 
@@ -14,7 +15,7 @@ def test_close() -> None:
     assert action["message"] == {"content": "message"}
 
 
-def test_lambda_handler_throws(monkeypatch) -> None:
+def test_lambda_handler_throws(monkeypatch: MonkeyPatch) -> None:
     """Test if lambda_handler throws if MSW_API is not defined"""
     log_mock = Mock()
     monkeypatch.setattr(lambda_function.settings, "MSW_API", None)
@@ -25,7 +26,7 @@ def test_lambda_handler_throws(monkeypatch) -> None:
     log_mock.assert_called_with("Couldn't read SF_MSW_API env variable")
 
 
-def test_lambda_handler(monkeypatch) -> None:
+def test_lambda_handler(monkeypatch: MonkeyPatch) -> None:
     """Test the main method of lambda function"""
     read = MagicMock()
     read.read.return_value = '[{"solidRating": 1}]'
