@@ -19,7 +19,7 @@ def close(fulfillment_state: str, message: Dict[str, str]) -> dict:
     }
 
 
-def lambda_handler(event: dict, _: dict) -> Optional[dict]:
+def lambda_handler(event: dict, context: dict) -> Optional[dict]:
     """Lambda Handler
        Entry point for every lambda function call
     """
@@ -27,9 +27,7 @@ def lambda_handler(event: dict, _: dict) -> Optional[dict]:
         logger.error("Couldn't read SF_MSW_API env variable")
         return None
 
-    logger.debug('event.bot.name=%s', event['bot']['name'])
-    logger.debug('dispatch userId=%s, intentName=%s', event['userId'],
-                 event['currentIntent']['name'])
+    logger.debug('event=%s context=%s', event, context)
 
     res = json.loads(urllib.request.urlopen(
         "http://magicseaweed.com/api/{}/forecast/?spot_id=912".format(
