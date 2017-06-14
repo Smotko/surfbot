@@ -11,9 +11,6 @@ log_error () {
   return $1
 }
 
-. venv/bin/activate
-PATH=$PATH:venv/bin/
-
 EXIT_FLAKE8=0
 EXIT_PYLINT=0
 EXIT_MYPY=0
