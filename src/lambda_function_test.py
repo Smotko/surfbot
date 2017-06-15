@@ -56,11 +56,11 @@ def test_lambda_handler(monkeypatch: MonkeyPatch) -> None:
         },
         "userId": "Userko",
         "currentIntent": {
-            "name": "Userko"
+            "name": "Userko",
+            "slots": {
+                "SurfSpot": "Carcavelos"
+            }
         },
-        "slots": {
-            "SurfSpot": "Carcavelos"
-        }
     }, {})
     assert res is not None
     assert res['dialogAction']['message']['content'] == "Number of stars: 1"
