@@ -26,6 +26,22 @@ def test_lambda_handler_throws(monkeypatch: MonkeyPatch) -> None:
     log_mock.assert_called_with("Couldn't read SF_MSW_API env variable")
 
 
+def test_lambda_handler_no_spot(monkeypatch: MonkeyPatch) -> None:
+    """Test if error message is displayed when no surf spot given"""
+    monkeypatch.setattr(lambda_function.settings, "MSW_API", "my_key")
+    res = lambda_function.lambda_handler({
+        "bot": {
+            "name": "Surfko"
+        },
+        "userId": "Userko",
+        "currentIntent": {
+            "name": "Userko"
+        }
+    }, {})
+    assert res is not None
+    assert res['dialogAction']['message']['content'] == "Surf spot not found :("
+
+
 def test_lambda_handler(monkeypatch: MonkeyPatch) -> None:
     """Test the main method of lambda function"""
     read = MagicMock()
@@ -40,6 +56,9 @@ def test_lambda_handler(monkeypatch: MonkeyPatch) -> None:
         "userId": "Userko",
         "currentIntent": {
             "name": "Userko"
+        },
+        "slots": {
+            "SurfSpot": "Carcavelos"
         }
     }, {})
     assert res is not None
