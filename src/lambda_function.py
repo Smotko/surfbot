@@ -6,6 +6,7 @@ from typing import Dict, Optional
 
 import settings
 from logger import logger
+from spot import to_msw_id
 
 
 def close(fulfillment_state: str, message: Dict[str, str]) -> dict:
@@ -27,11 +28,19 @@ def lambda_handler(event: dict, context: dict) -> Optional[dict]:
         logger.error("Couldn't read SF_MSW_API env variable")
         return None
 
+    spot = event.get("slots", {}).get("SurfSpot", None)
+    spot = to_msw_id(spot) if spot is not None else None
+
+    if not spot:
+        logger.error("Couldn't parse spot id")
+        return close('Fulfilled',
+                     {'contentType': 'PlainText',
+                      'content': 'Surf spot not found :('})
     logger.debug('event=%s context=%s', event, context)
 
     res = json.loads(urllib.request.urlopen(
-        "http://magicseaweed.com/api/{}/forecast/?spot_id=912".format(
-            settings.MSW_API)).read())
+        "http://magicseaweed.com/api/{}/forecast/?spot_id={}".format(
+            settings.MSW_API, spot)).read())
     logger.debug('json.response=%s', res)
 
     return close('Fulfilled',
