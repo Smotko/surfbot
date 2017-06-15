@@ -39,7 +39,8 @@ def test_lambda_handler_no_spot(monkeypatch: MonkeyPatch) -> None:
         }
     }, {})
     assert res is not None
-    assert res['dialogAction']['message']['content'] == "Surf spot not found :("
+    assert res['dialogAction']['message']['content'] ==\
+        "Surf spot not found :("
 
 
 def test_lambda_handler(monkeypatch: MonkeyPatch) -> None:
