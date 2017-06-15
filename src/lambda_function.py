@@ -24,6 +24,9 @@ def lambda_handler(event: dict, context: dict) -> Optional[dict]:
     """Lambda Handler
        Entry point for every lambda function call
     """
+
+    logger.debug('event=%s context=%s', event, context)
+
     if not settings.MSW_API:
         logger.error("Couldn't read SF_MSW_API env variable")
         return None
@@ -36,7 +39,6 @@ def lambda_handler(event: dict, context: dict) -> Optional[dict]:
         return close('Fulfilled',
                      {'contentType': 'PlainText',
                       'content': 'Surf spot not found :('})
-    logger.debug('event=%s context=%s', event, context)
 
     res = json.loads(urllib.request.urlopen(
         "http://magicseaweed.com/api/{}/forecast/?spot_id={}".format(
