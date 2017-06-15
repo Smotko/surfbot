@@ -31,7 +31,7 @@ def lambda_handler(event: dict, context: dict) -> Optional[dict]:
         logger.error("Couldn't read SF_MSW_API env variable")
         return None
 
-    spot = event.get("slots", {}).get("SurfSpot", None)
+    spot = event["currentIntent"].get("slots", {}).get("SurfSpot", None)
     spot = to_msw_id(spot) if spot is not None else None
 
     if not spot:
