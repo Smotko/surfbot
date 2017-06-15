@@ -73,7 +73,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 189,
         "lat": 41.4291,
         "lon": -8.7868,
-        "name": "Agu\\u00e7adoura",
+        "name": "Agu\u00e7adoura",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -83,7 +83,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 190,
         "lat": 41.1896,
         "lon": -8.7089,
-        "name": "Le\\u00e7a",
+        "name": "Le\u00e7a",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -123,7 +123,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 194,
         "lat": 39.6103,
         "lon": -9.089,
-        "name": "Nazar\\u00e9",
+        "name": "Nazar\u00e9",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -183,7 +183,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 202,
         "lat": 37.7833,
         "lon": -8.8048,
-        "name": "Malh\\u00e3o",
+        "name": "Malh\u00e3o",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -453,7 +453,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4330,
         "lat": 37.3459,
         "lon": -8.8561,
-        "name": "Monte Cl\\u00e9rigo",
+        "name": "Monte Cl\u00e9rigo",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -463,7 +463,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4331,
         "lat": 37.3459,
         "lon": -8.8561,
-        "name": "Monte Cl\\u00e9rigo",
+        "name": "Monte Cl\u00e9rigo",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -513,7 +513,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4336,
         "lat": 37.9197,
         "lon": -8.8078,
-        "name": "S\\u00e3o Torpes",
+        "name": "S\u00e3o Torpes",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -563,7 +563,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4341,
         "lat": 38.8268,
         "lon": -9.472,
-        "name": "Praia das Ma\\u00e7\\u00e1s",
+        "name": "Praia das Ma\u00e7\u00e1s",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -573,7 +573,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4342,
         "lat": 38.9323,
         "lon": -9.4221,
-        "name": "S\\u00e3o Juli\\u00e3o",
+        "name": "S\u00e3o Juli\u00e3o",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -583,7 +583,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4343,
         "lat": 38.9881,
         "lon": -9.4226,
-        "name": "Ribeira du2019Ilhas",
+        "name": "Ribeira d\u2019Ilhas",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -603,7 +603,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4345,
         "lat": 39.0144,
         "lon": -9.425,
-        "name": "S\\u00e3o Louren\\u00e7o",
+        "name": "S\u00e3o Louren\u00e7o",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -613,7 +613,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4346,
         "lat": 39.3235,
         "lon": -9.3623,
-        "name": "Consola\\u00e7\\u00e3o",
+        "name": "Consola\u00e7\u00e3o",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -663,7 +663,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4351,
         "lat": 39.7571,
         "lon": -9.034,
-        "name": "S\\u00e3o Pedro do Moel",
+        "name": "S\u00e3o Pedro do Moel",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -753,7 +753,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4360,
         "lat": 41.3847,
         "lon": -8.777,
-        "name": "P\\u00f3voa do Varzim",
+        "name": "P\u00f3voa do Varzim",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -763,7 +763,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4361,
         "lat": 41.5201,
         "lon": -8.7902,
-        "name": "F\\u00e3o",
+        "name": "F\u00e3o",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
@@ -783,7 +783,7 @@ ALL_SPOTS: List[Dict[str, Union[str, float, int]]] = [
         "id": 4363,
         "lat": 41.8071,
         "lon": -8.8687,
-        "name": "Vila Praia de \\u00c2ncora",
+        "name": "Vila Praia de \u00c2ncora",
         "offset": 3600,
         "timezone": "Europe/Lisbon"
     },
